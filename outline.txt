@@ -1,0 +1,118 @@
+TIMELINE:
+- who is here:
+- - profession split (artist v programmer v etc...)
+- - experience w/ vcs (svn v git v perforce etc...)
+- - - note that svn/others are in many ways a "subset" of git- so trust these metaphors, and it'll be easy to strip the ones that don't apply later
+- logistics:
+- - download git ui
+- - download text editor
+- introduction
+- - I'm phil/I'm alicia
+- - why version control: pragmatic
+- - - professionally expected
+- - - will be practically used to facilitate projects at jobs
+- - why version control: self-help
+- - - frees you to experiment
+- - - saves versioning for documentation
+- - - easy data backups
+- - - ready to collaborate
+- - - FREES YOU TO EXPERIMENT
+- - clarifications
+- - - vcs v dropbox
+- - - git v github
+- - - git v other vcs
+- - difference between learning minimal "click here" to get by vs understanding model
+- get to work
+- create a folder
+- open text editor
+- - type "hello world"
+- where is this text in computer?
+- not on HD- in memory
+- let's put it on HD, invoke program "SAVE"
+- - imagine hearing someone say "hard drives free you to experiment"
+- - - would sound ridiculous, but now imagine writing this letter without this step
+- - - every edit overwrites everything
+- - - so fickle (power outage?)
+- now we have to pretend we're doing actual work
+- - add bs sentence: "I think ur gr8" -> save
+- - one day something bad happens; alter sentence: "I think ur bad" -> save
+- - have more time to work: "you are certainly round and not flat"
+- - you forget why you were sad, and no longer think the world is bad- want to restore previous
+- initialize a repository
+
+
+
+NOTES:
+
+- boundaries:
+------------------
+- - memory (edit)
+- - - opened documents
+------------------
+- -> save
+- - - set checkpoint
+- - - overwrites
+- <- load
+- - - resore to checkpoint
+- - - overwrites
+------------------
+- - working directory (checkpoint)
+- - - named files/folders in a directory heirarchy
+------------------
+- -> commit
+- - - saves checkpoint
+- - - additive (never destructive)
+- <- check out
+- - - (re)sets checkpoint
+- - - overwrites
+------------------
+- repository (history)
+- - - labeled commits (hash/branch/HEAD)
+------------------
+- -> push
+- - - backs up all commits
+- - - additive
+- <- fetch
+- - - gets any missing commits
+- - - additive
+------------------
+- - remote ([shared] backup)
+- - - labeled commits
+------------------
+- repository (collaborate)
+
+- mindset:
+- - memory: cautious with edits
+- - working directory: cautious with saves
+- - repository: cautious with collaboration
+- - remote: free
+
+- progression:
+- - writing letter
+- WORKING DIRECTORY
+- - create checkpoint (save)
+- REPOSITORY
+- - create more checkpoints (commit)
+- - resore checkpoints (navigate tree)
+- - experiment (branch/merge)
+- REMOTE
+- - back up (push)
+- - open to collaboration (push)
+- EXTERNAL
+- - conflict resolution
+
+- concepts:
+- - tree
+- - branch
+- - HEAD
+- - diff
+
+- merge conflict
+- - sets working copy to invalid, w/ markers
+- - "commit" finalizes merge
+
+- resources
+- - dictionary
+- - diagram
+- - magnets
+
