@@ -1,4 +1,5 @@
 TIMELINE:
+
 - who is here:
 - - profession split (artist v programmer v etc...)
 - - experience w/ vcs (svn v git v perforce etc...)
@@ -27,20 +28,45 @@ TIMELINE:
 - open text editor
 - - type "hello world"
 - where is this text in computer?
-- not on HD- in memory
-- let's put it on HD, invoke program "SAVE"
+- not in FileSystem- in memory
+- let's put it in FileSystem, invoke program "SAVE"
 - - imagine hearing someone say "hard drives free you to experiment"
-- - - would sound ridiculous, but now imagine writing this letter without this step
+- - - would sound ridiculous, but now imagine writing a letter without this capability
 - - - every edit overwrites everything
 - - - so fickle (power outage?)
-- now we have to pretend we're doing actual work
-- - add bs sentence: "I think ur gr8" -> save
-- - one day something bad happens; alter sentence: "I think ur bad" -> save
+- now we have to pretend we're doing actual work (we can just run through this real quick over projector rather than forcing everyone to follow)
+- - add sentence: "I think ur gr8" -> save
+- - alter sentence: "I think ur bad" -> save
 - - have more time to work: "you are certainly round and not flat"
 - - you forget why you were sad, and no longer think the world is bad- want to restore previous
+- - assume these were significant edits: what are your options?
+- - - try to recreate past work from memory, apply on top of current state
+- - - hit ctrl-z until you get to past, try to reapply "current" state from memory
+- - - either way, it's fickle. you CAN successfully do this. but this is like the person refusing to understand how file systems work, and "getting by" managing workflows by keeping every document ever open.
 - initialize a repository
-
-
+- save file
+- make initial commit
+- make change
+- new commit
+- explain parenthood; never destructive; always additive
+- make deletion
+- new commit
+- STILL NEVER DESTRUCTIVE
+- explain IDs (47fcc1820d)
+- explain HEAD
+- which allows us to check out older commits
+- explain branches(?) (master)
+- explain (INTERACTIVE) merge
+- try out doing all this on their own?
+- explain basic viz/diff?
+- introduce remotes
+- - clone
+- - push
+- - fetch
+- - ff merge
+- - pull (as fetch + ff merge)
+- introduce collaboration
+- break out to interactive challenges
 
 NOTES:
 
@@ -81,6 +107,7 @@ NOTES:
 ------------------
 - repository (collaborate)
 
+
 - mindset:
 - - memory: cautious with edits
 - - working directory: cautious with saves
@@ -103,8 +130,8 @@ NOTES:
 
 - concepts:
 - - tree
-- - branch
 - - HEAD
+- - branch
 - - diff
 
 - merge conflict
@@ -114,5 +141,5 @@ NOTES:
 - resources
 - - dictionary
 - - diagram
-- - magnets
+- - magnets+yarn (will be helpful to illustrate branches)
 
