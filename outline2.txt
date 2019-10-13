@@ -1,0 +1,208 @@
+- hey
+- this is the git workshop
+- heads up logistics; download while we're talking:
+- - need git
+- - - on osx, type git in command line and it should direct you
+- - - on win, download gitbash
+- - need git ui
+- - - git kraken free 10day trial (extensible)
+- - need text editor
+- - - textedit
+- - - sublimetext
+
+- I'm phil
+- I'm alicia
+
+- we'll be learning about version control; specifically git
+- who here
+- - has exp w/ version control?
+- - has exp w/ git?
+
+- quick "what"
+- - save file for all your save files (directory)
+- - lets you navigate that
+
+- why
+- - professionally expected, for a reason
+- - helps for documentation
+- - easy data backups
+- - facilitates collaboration
+- - frees you to experiment
+
+- clarifications
+- - vcs v dropbox
+- - git v github
+- - git v other vcs
+
+- philosophy
+- - can learn "click here, then here, to do X"
+- - we're going to focus instead on you understanding the model
+- - think of a filesystem- imagine someone is working on a project, but never closes it bc filesystems are scary. they know they have to hit "file->save", and can hit "file->load" if they make a mistake, but eventually they'll have to think about their projectS structure
+
+- work
+- - let's use that metaphor
+
+- writing letter
+MEMORY
+- write "hello world" in text editor
+- this is all you need
+- you can print, email, photoedit (just hold webcam up, then screenprint to clipboard, paste in photoshop, etc...)
+- have all your files open
+- you CAN get by- your work is "saved" (if you look away, then look back, it's still there)
+FILESYSTEM
+- can "save" file
+- goes in heirarchy
+- downscope to "hello country"
+- uh oh- power outage
+- don't worry- you've been using file systems!
+- except, you load file, and it still says "hello world"
+- it's useful to see a barrier between these two modes of "saving"
+- need to explicitly traverse them-
+- "save"
+- "load"
+- now you change it to "country", hit "save"- you're good
+- next day, you regret dismissing your ambition
+- what you had was GREAT but you FORGOT!
+- was it "hello Earth"? "hello planet"? gah none of that sounds so good- what a shame we don't have a record of it
+REPOSITORY
+- reset sim:
+- "hello world"
+- save
+- commit
+- - commit represented by arrow and circle
+- - looks arcane! so does filepath (before you understand "it's just a heirarchy")- you'll absolutely get through this
+- s/world/country/
+- save
+- commit
+- - cool thing about repository is every change is additive; nothing is destructive
+- - so, how do we substitute "world"->"country" without removing anything?
+- - save whole new file _in addition to_ old file
+- - the way that works is you add a child node to the parent
+- - - child nodes have a "parent arrow" (different than HEAD arrow) pointing to parent
+- - - HEAD arrow now points to that new child
+- break narrative to add another commit to quick test if this is understood:
+- s/country/usa/
+- save
+- commit
+- good?
+- notice- we're just constructing a chain
+- now let's actually go back to "hello world";
+- bunch of different ways to do this:
+- - git reset
+- - - git reset --hard target # checks out target
+- - - git reset --soft master # puts head at master
+- - - also
+- - - git checkout target
+- - - git reset --soft master
+- - - git checkout master
+- - git revert
+- - - git revert target..HEAD
+- using git revert...
+- - non-destructive. so how?
+- - will create NEW COMMITS leading back to original
+- note: revert has now crossed the boundary from the repository back to the filesystem
+- now's a good time to mention: each "commit" represents the state of the WHOLE repository. so if you have 10 files, but change one, that next commit is STILL the state of the whole folder, ie all 10 files.
+- the normal way to check things out is to use "checkout"[0]- can check out individual files!
+- - note, "checkout" is terrible terminology that's used for like 10 different things
+- rather than using revert, let's try
+- - git checkout target -- file.txt 
+- now we have A's history in our file system, and we want to commit this:
+- - git commit A
+DEMO
+- 
+BRANCH
+- branches act like the HEAD arrow
+- convenient ways to keep track of multiple trains of thought
+- this is if you're really experimenting
+- but understanding it is crucial for later
+- so- we always have the HEAD arrow,
+- but we've also had another branch arrow: master
+- think of branches as checkpoints for multiple HEADs
+- so let's say you want to try totally fucking up your whole codebase and not worry about losing progress
+- we can create a new branch, called "experimental"
+- then we "checkout"[1] that branch-
+- - before, HEAD has brought along master
+- - now, HEAD will bring along experimental
+- edit->save->commit
+- edit->save->commit
+- edit->save->commit
+- uh oh, there's some deliverable feature I need
+- - "aka my supervisor wants a draft and I it needs a titlehead but I don't want to send them this crazy experimentation shit"
+- can "checkout"[2] master
+- edit->save->commit
+- email
+- "checkout"[2] experimental
+- continue experimentation
+MERGE (see also, REBASE)
+- changes to a repository are supposed to be non-destructive!
+- solution: just add another commit
+- merge commits have TWO parents!
+- helpful to see each commit as "the deltas on the commit beforehand"
+STATE OF THE REPOSITORY
+- the list of all commits, and their parents
+- where is head
+- where are all branches
+- which branch is head attached to
+DEMO
+-
+REMOTE
+- you've been dilligent
+- killing it with project repo structure
+- impenetrable codebase!
+- then laptop gets stolen. or smashed. or harddrive corrupted.
+- game over.
+- let's add another layer!
+- a lot of people think this is the hard one:
+- NO! the "repository" is the hard one.
+- if you understand THAT ONE, than all problems that come up in THIS one are obvious.
+- this is where github comes in
+- a remote is literally just a clone of your entire repository.
+- that's it:
+- you "push", and it just (additively!) clones
+- let's go back to beginning: want to totally revamp project- "Hello Banana"
+- save
+- commit
+- push
+- one change: remember, the "state of the repository" also says "where are branches"
+- so your local copy will git a bunch of new branches named "origin/branch"
+- lets you edit local branch positions, THEN push them
+DEMO
+-
+- that wasn't so hard. but we've only been going one way
+COLLABORATION
+- let's add another boundary: repository2
+- notice: there's NO DIFFERENCE between repo1 and repo2, so the boundary is going to be symmetrical
+- therefore, we know how repo2 can contribute to remote (push)
+- but how does it get info?
+- - NOT pull!
+- - - common misconception- yes you will use pull a lot in practice, but conceptually, we should instead think:
+- - fetch
+- fetch ADDITIVELY
+- gets all new commits!
+- current (empty) repo: empty commit, a head, and master
+- fetch gets all remote commits, plus origin/branch branches
+- now, we can MERGE local branch with remote branch
+- - if necessary, will create parent
+- - if not, will FF!
+- take a moment to appreciate that every step is additive
+- NO ONE CAN DAMAGE THINGS- they can only add things.
+- lets say they create a new commit
+- then they push it
+- no problem! additive!
+- except uh oh so did you
+- now master is over here
+- but master is also over there
+- (just work through it phil I'm not going to write this all down)
+- point: will always have to sync (fetch) before you can push
+- but a fetch is ALWAYS ADDITIVE! so you'll never ruin anything
+DEMO
+
+
+
+
+
+
+
+
+
+
