@@ -1,0 +1,36 @@
+- logistics; download while we're talking:
+- - need git
+- - - on osx, type git in command line and it should direct you
+- - - on win, download gitbash
+- - - - https://git-scm.com/download/win
+- - need git ui
+- - - git kraken free 10day trial (extensible)
+- - - - https://www.gitkraken.com/
+- - need text editor
+- - - textedit
+- - - sublimetext
+- - - - https://www.sublimetext.com/
+
+- introductions
+
+- what is git + "show of hands" re: experience
+- - "checkpoints for your save files"
+
+- why
+- - professionally expected, for a reason
+- - easy data backups
+- - facilitates collaboration
+- - helps for documentation
+- - frees you to experiment
+
+- methods
+- - can learn "click here, then here, to do X"
+- - we're going to focus instead on you understanding the model
+- - going to first learn conceptually before getting into the interfaces; its the interfaces that are confusing
+
+let's write a letter
+
+MEMORY
+
+
+

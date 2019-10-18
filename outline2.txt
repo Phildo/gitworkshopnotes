@@ -4,11 +4,14 @@
 - - need git
 - - - on osx, type git in command line and it should direct you
 - - - on win, download gitbash
+- - - - https://git-scm.com/download/win
 - - need git ui
 - - - git kraken free 10day trial (extensible)
+- - - - https://www.gitkraken.com/
 - - need text editor
 - - - textedit
 - - - sublimetext
+- - - - https://www.sublimetext.com/
 
 - I'm phil
 - I'm alicia
